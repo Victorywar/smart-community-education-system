@@ -15,14 +15,14 @@ const seedVolunteer = async () => {
 
     const existing = await Volunteer.findOne({ username });
     if (existing) {
-      existing.name = 'Priya';
+      existing.name = 'Midhuna';
       existing.password = hashed;
       existing.role = 'volunteer';
       await existing.save();
       console.log('Updated volunteer: username=volunteer password=volunteer123');
     } else {
       await Volunteer.create({
-        name: 'Priya',
+        name: 'Midhuna',
         username,
         password: hashed,
         role: 'volunteer',

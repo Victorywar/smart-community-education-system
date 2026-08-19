@@ -39,14 +39,14 @@ const seed = async () => {
     const volHash = await bcrypt.hash('volunteer123', 10);
     const volunteer = await Volunteer.findOne({ username: 'volunteer' });
     if (volunteer) {
-      volunteer.name = 'Priya';
+      volunteer.name = 'Midhuna';
       volunteer.password = volHash;
       volunteer.role = 'volunteer';
       await volunteer.save();
       console.log('Updated volunteer: volunteer / volunteer123');
     } else {
       await Volunteer.create({
-        name: 'Priya',
+        name: 'Midhuna',
         username: 'volunteer',
         password: volHash,
         role: 'volunteer',
